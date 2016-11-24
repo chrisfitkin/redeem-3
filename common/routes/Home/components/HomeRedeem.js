@@ -10,7 +10,7 @@ const Home = (props) => (
 
     <h2 className={css(styles.header)}>Products You Love, Money In Your Pocket</h2>
     <p className={css(styles.lead)}>
-      Shop for products with the brands you already love.  Get paid <em>instantly</em> the way you want with MasterCard, PayPal, and Venmo.
+      Shop for products with the brands you already love.  Get paid <em>instantly</em> with MasterCard, PayPal, and Venmo.
     </p>
     <Link to='/rebates' className={css(styles.link)} activeClassName={css(styles.link, styles.activeLink)}> Explore Rebates
     </Link>

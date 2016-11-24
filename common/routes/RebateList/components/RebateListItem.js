@@ -4,7 +4,7 @@ import { StyleSheet, css } from 'aphrodite'
 
 const RebateListItem = ({ rebate }) => (
   <div className={css(styles.root)}>
-    <h3><Link to={`/post/${rebate.slug}`} className={css(styles.title)}> {rebate.title} </Link></h3>
+    <h3><Link to={`/rebate/${rebate.slug}`} className={css(styles.title)}> {rebate.title} </Link></h3>
   </div>
 )
 

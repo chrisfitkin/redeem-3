@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
 
 router.get('/:slug', (req, res) => {
   const index = rebates.findIndex(el => el.slug === req.params.slug)
-  console.log("=========== rebates /:slug ===========")
+  // console.log("=========== rebates /:slug ===========")
   // console.log(req.params)
   // console.log(index)
   // console.log(rebates)
@@ -23,7 +23,7 @@ router.get('/:slug', (req, res) => {
   }
 
   setTimeout(() => {
-    console.log(rebates[index])
+    // console.log(rebates[index])
     res.status(200).json(rebates[index])
   }, 300)
 })

@@ -3,7 +3,7 @@ import { injectAsyncReducer } from '../../store'
 
 export default function createRoutes (store) {
   return {
-    path: 'post/:slug',
+    path: 'rebate/:slug',
     getComponents (location, cb) {
       require.ensure([
         './containers/RebatePage',

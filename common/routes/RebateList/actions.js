@@ -6,7 +6,7 @@ export function loadRebates () {
     dispatch({ type: LOAD_REBATES_REQUEST })
     return axios.get(`${protocol}://${host}/api/v0/rebates`)
       .then(res => {
-        console.log(res)
+        // console.log(res)
         dispatch({
           type: LOAD_REBATES_SUCCESS,
           payload: res.data,

@@ -11,7 +11,7 @@ export default function createRoutes (store) {
       ], (require) => {
         let RebatePage = require('./containers/RebatePage').default
         let rebateReducer = require('./reducer').default
-        injectAsyncReducer(store, 'currentRebates', rebateReducer)
+        injectAsyncReducer(store, 'currentRebate', rebateReducer)
         cb(null, RebatePage)
       })
     }

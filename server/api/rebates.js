@@ -12,6 +12,10 @@ router.get('/', (req, res) => {
 
 router.get('/:slug', (req, res) => {
   const index = fakeDB.findIndex(el => el.slug === req.params.slug)
+  console.log("=========== rebates /:slug ===========")
+  // console.log(req.params)
+  // console.log(index)
+  // console.log(fakeDB)
   if (index < 0) {
     res.status(404).json({
       error: 'Rebate does not exist in db'
@@ -19,6 +23,7 @@ router.get('/:slug', (req, res) => {
   }
 
   setTimeout(() => {
+    console.log(fakeDB[index])
     res.status(200).json(fakeDB[index])
   }, 300)
 })

@@ -2,20 +2,20 @@ import { Router } from 'express'
 const router = new Router()
 
 // Remove this
-import fakeDB from '../fakeDB.js'
+import rebates from '../fakeDB/rebates.js'
 
 router.get('/', (req, res) => {
   setTimeout(() => {
-    res.status(200).json(fakeDB)
+    res.status(200).json(rebates)
   }, 300)
 })
 
 router.get('/:slug', (req, res) => {
-  const index = fakeDB.findIndex(el => el.slug === req.params.slug)
+  const index = rebates.findIndex(el => el.slug === req.params.slug)
   console.log("=========== rebates /:slug ===========")
   // console.log(req.params)
   // console.log(index)
-  // console.log(fakeDB)
+  // console.log(rebates)
   if (index < 0) {
     res.status(404).json({
       error: 'Rebate does not exist in db'
@@ -23,8 +23,8 @@ router.get('/:slug', (req, res) => {
   }
 
   setTimeout(() => {
-    console.log(fakeDB[index])
-    res.status(200).json(fakeDB[index])
+    console.log(rebates[index])
+    res.status(200).json(rebates[index])
   }, 300)
 })
 

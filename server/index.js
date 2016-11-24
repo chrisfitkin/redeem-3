@@ -58,6 +58,7 @@ export const createServer = (config) => {
 
   app.use(express.static('public'))
   app.use('/api/v0/posts', require('./api/posts'))
+  app.use('/api/v0/rebates', require('./api/rebates'))
 
 
   app.get('*', (req, res) => {

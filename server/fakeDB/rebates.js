@@ -26,7 +26,7 @@ const rebates = [
   {
     id: '3',
     title: "Cedar Street Small Hayden Top Handle Bag",
-    slug: 'under-armor-duffle-bag',
+    slug: 'kate-spade-hayden-bag',
     amazon: "https://www.amazon.com/Street-Hayden-Satchel-Adventure-Bright/dp/B01DTQAD0S",
     amount: 10.00,
     image: "https://images-na.ssl-images-amazon.com/images/I/91CyjMvhCUL._UX425_.jpg",

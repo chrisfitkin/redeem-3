@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Field, reduxForm } from 'redux-form'
 import FileInput from './FileInput'
 // import DropzoneDemo from './DropzoneDemo'
-import ReduxFormDropzone from './ReduxFormDropzone'
+import ReduxFormDropzone from '../../../components/ReduxFormDropzone'
 
 class ClaimForm extends Component {
   render() {
@@ -36,25 +36,6 @@ class ClaimForm extends Component {
             dropzoneOnDrop={this.handleDrop}
           />
         </div>
-        {/* <div>
-          <Field name="photo" component={DropzoneDemo} />
-        </div> */}
-        {/*
-        <div>
-          <FileInput
-            name="add_photo"
-            label="Upload Photo:"
-              classNameLabel="file-input-label"
-              className="file-input"
-              dropzone_options={{
-                multiple: false,
-                accept: 'image/*'
-              }}
-            >
-            <span>Add more</span>
-          </FileInput>
-        </div>
-        */}
         <button type="submit">Submit</button>
       </form>
     );

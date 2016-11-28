@@ -48,7 +48,7 @@ const style = {
 
 // Decorate the form component
 ClaimForm = reduxForm({
-  form: 'contact' // a unique name for this form
+  form: 'claimRebate' // a unique name for this form
 })(ClaimForm)
 
 export default ClaimForm

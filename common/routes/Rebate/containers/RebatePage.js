@@ -25,12 +25,14 @@ const RebatePage = ({ title, image, amazon, brand, isLoading, error }) => {
           </div>}
         {!isLoading &&
           <div>
+          
+            <ClaimFormContainer />
+            <hr />
             <h3>{brand.title}</h3>
             <h2 className={css(styles.title)}>{title}</h2>
             <p className={css(styles.content)}>shop: <a href={amazon}>{amazon}</a></p>
             <p className={css(styles.content)}><img className={css(styles.image)} src={image} /></p>
             
-            <ClaimFormContainer />
           </div>}
       </div>
     )

@@ -13,7 +13,7 @@ const App = ({ children }) => (
       {children}
       <footer className={css(styles.footer)}>
         {/*Copyright © 2016 <a className={css(styles.footerLink)} href='http://twitter.com/chrisfitkin' target='_blank'>Chris Fitkin</a>*/}
-        Copyright © 2016 redeem-app
+        Copyright © 2016 Redeem App
       </footer>
     </div>
   </MuiThemeProvider>

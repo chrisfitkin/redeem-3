@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
+import { StyleSheet, css } from 'aphrodite'
 
 const RenderField = ({ input, label, type, meta: { asyncValidating, touched, error } }) => (
   <div>
-    <label>{label}</label>
+    <label className={css(styles.label)}>{label}</label>
     <div className={asyncValidating ? 'async-validating' : ''}>
       <input {...input} type={type} placeholder={label}/>
       {touched && error && <span>{error}</span>}
@@ -10,5 +11,11 @@ const RenderField = ({ input, label, type, meta: { asyncValidating, touched, err
     </div>
   </div>
 )
+
+const styles = StyleSheet.create({
+  label: {
+    display: 'none'
+  }
+})
 
 export default RenderField

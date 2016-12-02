@@ -1,8 +1,8 @@
 import React from 'react'
 import MasonryInfiniteScroller from 'react-masonry-infinite';
 import RebateListItem from '../components/RebateListItem'
-import { StyleSheet, css } from 'aphrodite'
 import Helmet from 'react-helmet'
+import { StyleSheet, css } from 'aphrodite'
 
 
 const styles = StyleSheet.create({
@@ -27,6 +27,7 @@ const sizes = [
   { mq: '1024px', columns: 3, gutter: 20 }
 ]
 
+
 const RebateListPage = ({ rebates }) => (
   <div className={css(styles.root)}>
     <Helmet title='Rebates' />
@@ -48,12 +49,5 @@ const RebateListPage = ({ rebates }) => (
   </div>
 )
 
-    // {!rebates.isLoading &&
-    //   <MasonryInfiniteScroller hasMore={this.state.hasMore} loadMore={() => this.setState({ elements: this.state.elements.push("Element") })>
-    //     {
-    //       rebates.data.map((rebate, i) => <RebateListItem key={rebate.id} rebate={rebate} />)
-    //     }
-    //   </MasonryInfiniteScroller>
-    // }
 
 export default RebateListPage

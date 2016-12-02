@@ -3,33 +3,31 @@ import { Link } from 'react-router'
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import { StyleSheet, css } from 'aphrodite'
-
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group' // ES6
+import AnimateFadeIn from '../../../components/AnimateFadeIn'
+import AnimateFadeUp from '../../../components/AnimateFadeUp'
 
 const RebateListItem = ({ rebate }) => (
   <div className={css(styles.listItem)}>
-    <Card>
-      <CardHeader 
-        title={rebate.title} 
-        avatar={rebate.brand.logo}
-        />
-      <CardMedia>
-          <img src={rebate.image} className={css(styles.image)} />
-      </CardMedia>
-      <CardTitle subtitle={`\$${rebate.amount} rebate`} />
-      <CardActions>
-        <FlatButton label="claim" containerElement={<Link to={`/rebate/${rebate.slug}`}/>}  primary={true} />
-        <FlatButton label="shop" containerElement={<Link to={rebate.amazon}/>} target="_blank" />
-      </CardActions>
-    </Card>
+    <AnimateFadeUp key={rebate.uuid}>
+      <Card>
+        <CardHeader 
+          title={rebate.title} 
+          avatar={rebate.brand.logo}
+          />
+        <CardMedia>
+            <img src={rebate.image} className={css(styles.image)} />
+        </CardMedia>
+        <CardTitle subtitle={`\$${rebate.amount} rebate`} />
+        <CardActions>
+          <FlatButton label="claim" containerElement={<Link to={`/rebate/${rebate.slug}`}/>}  primary={true} />
+          <FlatButton label="shop" containerElement={<Link to={rebate.amazon}/>} target="_blank" />
+        </CardActions>
+      </Card>
+    </AnimateFadeUp>
   </div>
 )
 
-// const RebateListItem = ({ rebate }) => (
-//   <div className={css(styles.listItem)}>
-  
-//     <h3><Link to={`/rebate/${rebate.slug}`} className={css(styles.title)}> {rebate.title} </Link></h3>
-//   </div>
-// )
 
 const styles = StyleSheet.create({
   listItem: {
@@ -53,5 +51,8 @@ const styles = StyleSheet.create({
     maxWidth: '100%'
   }
 })
+
+
+
 
 export default RebateListItem

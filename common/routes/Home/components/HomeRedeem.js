@@ -1,19 +1,20 @@
 import React from 'react'
 import Link from 'react-router/lib/Link'
-
 import { StyleSheet, css } from 'aphrodite'
+import AnimateFadeUp from '../../../components/AnimateFadeUp'
 
 // This is a static page. It uses an array to hold data about the resources
 // and maintain DRY
 const Home = (props) => (
   <div>
-
-    <h2 className={css(styles.header)}>Your Rebates, Your Way</h2>
-    <p className={css(styles.lead)}>
-      Shop for products with the brands you already love.  Get paid <em>instantly</em> with MasterCard, PayPal, and Venmo.
-    </p>
-    <Link to='/rebates' className={css(styles.link)} activeClassName={css(styles.link, styles.activeLink)}> Explore Rebates
-    </Link>
+      <h2 className={css(styles.header)}>Your Rebates, Your Way</h2>
+      <p className={css(styles.lead)}>
+        Shop for products with the brands you already love.  Get paid <em>instantly</em> with MasterCard, PayPal, and Venmo.
+      </p>
+      <AnimateFadeUp>
+        <Link to='/rebates' className={css(styles.link)} activeClassName={css(styles.link, styles.activeLink)}> Explore Rebates
+        </Link>
+      </AnimateFadeUp>
   </div>
 )
 

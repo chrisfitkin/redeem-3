@@ -22,6 +22,7 @@ const ClaimForm = (props) => {
       <Field name="firstName" type="text" component={RenderField} label="First Name"/>
       <Field name="lastName" type="text" component={RenderField} label="Last Name" />
       <Field name="email" type="text" component={RenderField} label="Email" />
+      <Field name="rebateCode" type="text" component={RenderField} label="Rebate Code" />
 
       <div>
         <Field
@@ -38,7 +39,7 @@ const ClaimForm = (props) => {
           dropzoneOnDrop={this.handleDrop}
         />
       </div> */}
-      <button type="submit">Submit</button>
+      <button type="submit">Submit Claim</button>
     </form>
   )
 }

@@ -19,7 +19,7 @@ const Nav = () => (
 
 const styles = StyleSheet.create({
   link: {
-    maxWidth: 700,
+    maxWidth: 1140,
     color: '#999',
     margin: '1.5rem 1rem 1.5rem 0',
     display: 'inline-block',

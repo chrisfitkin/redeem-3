@@ -1,16 +1,42 @@
 import React from 'react'
 import { Link } from 'react-router'
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
 import { StyleSheet, css } from 'aphrodite'
 
+
 const RebateListItem = ({ rebate }) => (
-  <div className={css(styles.root)}>
-    <h3><Link to={`/rebate/${rebate.slug}`} className={css(styles.title)}> {rebate.title} </Link></h3>
+  <div className={css(styles.listItem)}>
+    <Card>
+      <CardHeader 
+        title={rebate.title} 
+        avatar={rebate.brand.logo}
+        />
+      <CardMedia>
+          <img src={rebate.image} className={css(styles.image)} />
+      </CardMedia>
+      <CardTitle subtitle={`\$${rebate.amount} rebate`} />
+      <CardActions>
+        <FlatButton label="claim" containerElement={<Link to={`/rebate/${rebate.slug}`}/>}  primary={true} />
+        <FlatButton label="shop" containerElement={<Link to={rebate.amazon}/>} target="_blank" />
+      </CardActions>
+    </Card>
   </div>
 )
 
+// const RebateListItem = ({ rebate }) => (
+//   <div className={css(styles.listItem)}>
+  
+//     <h3><Link to={`/rebate/${rebate.slug}`} className={css(styles.title)}> {rebate.title} </Link></h3>
+//   </div>
+// )
+
 const styles = StyleSheet.create({
-  root: {
-    margin: '0 auto 1.5rem'
+  listItem: {
+    //margin: '0 auto 1.5rem'
+    // width: '100%',
+    width: 300,
+    maxWidth: 300
   },
   title: {
     fontSize: 28,
@@ -22,6 +48,9 @@ const styles = StyleSheet.create({
     ':hover': {
       opacity: 0.5
     }
+  },
+  image: {
+    maxWidth: '100%'
   }
 })
 

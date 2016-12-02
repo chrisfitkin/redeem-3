@@ -26,6 +26,12 @@ import { configureStore } from '../common/store'
 import reducer from '../common/createReducer'
 import createRoutes from '../common/routes/root'
 
+
+// Needed for onTouchTap
+// http://stackoverflow.com/a/34015469/988941
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
+
 export const createServer = (config) => {
   const __PROD__ = config.nodeEnv === 'production'
   const __TEST__ = config.nodeEnv === 'test'
@@ -154,6 +160,7 @@ export const createServer = (config) => {
                   }
                 </style>
                 <style data-aphrodite>${data.css.content}</style>
+                <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
               </head>
               <body>
                 <div id="root">${data.html}</div>

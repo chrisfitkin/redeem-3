@@ -52,6 +52,7 @@
     "react-dom": "^15.2.1",
     "react-dropzone": "^3.7.3",
     "react-helmet": "^3.1.0",
+    "react-masonry-infinite": "^1.1.0",
     "react-redux": "^4.4.0",
     "react-router": "^2.0.0",
     "redial": "^0.4.1",

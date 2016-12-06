@@ -4,6 +4,8 @@ import FileInput from './FileInput'
 import ReduxFormDropzone from '../../../components/ReduxFormDropzone'
 import RenderField from './RenderField'
 import RaisedButton from 'material-ui/RaisedButton';
+import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
+import { StyleSheet, css } from 'aphrodite'
 
 // https://medium.com/@rajaraodv/adding-a-robust-form-validation-to-react-redux-apps-616ca240c124#.v1jey3pdd
 
@@ -25,6 +27,35 @@ const ClaimForm = (props) => {
       <Field name="email" type="text" component={RenderField} label="Email" />
       <Field name="rebateCode" type="text" component={RenderField} label="Rebate Code" />
 
+      
+    <div>
+      <br/>
+      <h3>How do you want to get paid?</h3>
+      <br/>
+      <RadioButtonGroup name="paymentMethod" defaultSelected="mastercard">
+      <RadioButton
+        value="mastercard"
+        label="MasterCard Send"
+        style={styles.radioButton}
+      />
+      <RadioButton
+        value="venmo"
+        label="Venmo"
+        style={styles.radioButton}
+      />
+      <RadioButton
+        value="paypal"
+        label="PayPal"
+        style={styles.radioButton}
+      />
+      <RadioButton
+        value="square"
+        label="SquareCash"
+        style={styles.radioButton}
+      />
+      </RadioButtonGroup>
+    </div>
+
       <div>
         <br/>
         <Field
@@ -32,6 +63,8 @@ const ClaimForm = (props) => {
           name="photo"
           component={FileInput}
         />
+        <br/>
+        <br/>
         <br/>
       </div>
       {/* <div>
@@ -52,8 +85,17 @@ const ClaimForm = (props) => {
 }
 
 
-const style = {
-  dropzone: {}
+const styles = {
+  dropzone: {},
+  RadioButtonContainer: {
+    textAlign: 'left'
+  },
+  radioButton: {
+    maxWidth: 200,
+    textAlign: 'left',
+    marginLeft: 'auto',
+    marginRight: 'auto'
+  }
 }
 
 // Decorate the form component

@@ -4,7 +4,7 @@ const initialState = {
   data: [],
   lastFetched: null,
   isLoading: false,
-  isLoadingMore: true,
+  isLoadingMore: false,
   error: null
 }
 
@@ -28,7 +28,7 @@ export default function rebates (state = initialState, action) {
         error: null}
     case types.LOAD_MORE_REBATES_SUCCESS:
       return { ...state,
-        data: action.payload,
+        data: state.data.concat(action.payload),
         lastFetched: action.meta.lastFetched,
         isLoadingMore: false}
     case types.LOAD_MORE_REBATES_FAILURE:

@@ -28,10 +28,21 @@ export function loadRebates () {
 }
 
 export function loadMoreRebates () {
+  console.log('running loadMoreRebates()');
   return (dispatch, getState, { axios }) => {
     const { protocol, host } = getState().sourceRequest
+    const { isLoadingMore } = getState().rebates
+    
+    console.log("===== isLoadingMore =====")
+    console.log(isLoadingMore)
+
+    if (isLoadingMore) {
+      return false
+    }
+
+    // TODO: eliminate caching that causes duplicate uuid valies in return
     dispatch({ type: LOAD_MORE_REBATES_REQUEST })
-    return axios.get(`${protocol}://${host}/api/v0/rebates`)
+    return axios.get(`${protocol}://${host}/api/v0/rebates?nocache=${Date.now()}`)
       .then(res => {
         // console.log(res)
         dispatch({

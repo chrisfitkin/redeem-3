@@ -1,7 +1,7 @@
 import { provideHooks } from 'redial'
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { loadRebates } from '../actions'
+import { loadRebates, loadMoreRebates } from '../actions'
 import { selectRebates } from '../reducer'
 import RebateListPage from '../components/RebateListPage'
 
@@ -20,8 +20,14 @@ const mapStateToProps = state => ({
 // then update the rebates in the dispatch function promise
 const mapDispatchToProps = dispatch => ({
   hasMore: true,
-  loadMore: (page) => {
-    dispatch.loadMoreRebates()
+  loadMore: (pageNumberToLoad) => {
+    if(pageNumberToLoad < 25) {
+      // TODO: Fix inifnite loop (probably in hasMore w/ isLoadingMore flag)
+      // TODO: Actually load more using the page number instead of duplicating
+      console.log('pageNumberToLoad = '+pageNumberToLoad)
+      console.log('call dispatch(loadMoreRebates())')
+      dispatch(loadMoreRebates())
+    }
   }
 })
 
@@ -29,4 +35,4 @@ RebateListPage.PropTypes = {
   rebates: PropTypes.array.isRequired
 }
 
-export default provideHooks(redial)(connect(mapStateToProps)(mapDispatchToProps)(RebateListPage))
+export default provideHooks(redial)(connect(mapStateToProps,mapDispatchToProps)(RebateListPage))

@@ -28,7 +28,7 @@ const sizes = [
 ]
 
 
-const RebateListPage = ({ rebates }) => (
+const RebateListPage = ({ rebates, hasMore, loadMore }) => (
   <div className={css(styles.root)}>
     <Helmet title='Rebates' />
     {rebates.isLoading &&
@@ -38,14 +38,21 @@ const RebateListPage = ({ rebates }) => (
     {!rebates.isLoading &&
       <MasonryInfiniteScroller 
         sizes={sizes}
-        loader={<div className="loader">Loading ...</div>}
+        loader={null}
         style={styles.masonryInfiniteScroller}
         className={css(styles.masonryInfiniteScroller)}
+        hasMore={hasMore}
+        loadMore={loadMore}
         >
         {
           rebates.data.map((rebate, i) => <RebateListItem key={rebate.uuid} rebate={rebate} />)
         }
       </MasonryInfiniteScroller>}
+      
+    {rebates.isLoadingMore &&
+      <div>
+        <h2 className={css(styles.title)}>Loading More...</h2>
+      </div>}
   </div>
 )
 

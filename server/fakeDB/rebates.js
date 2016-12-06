@@ -66,6 +66,7 @@ var rebates = [
 for (var i=0;i<3;i++) {
   rebates = rebates.concat(rebates);
 }
+*/
 
 // set a unique id
 const uuidV4 = require('uuid/v4');
@@ -75,7 +76,7 @@ rebates = rebates.map(function(obj){
      ...obj
    }
 });
-*/
+
 
 var uuids = rebates.map((obj) => obj.uuid);
 // console.log(uuids);

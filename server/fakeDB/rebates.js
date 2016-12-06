@@ -61,6 +61,7 @@ var rebates = [
   },
 ]
 
+/*
 // duplicate the seed array, a lot
 for (var i=0;i<3;i++) {
   rebates = rebates.concat(rebates);
@@ -74,9 +75,9 @@ rebates = rebates.map(function(obj){
      ...obj
    }
 });
+*/
 
-
-// var uuids = rebates.map((obj) => obj.uuid);
+var uuids = rebates.map((obj) => obj.uuid);
 // console.log(uuids);
 // console.log(rebates);
 

@@ -29,14 +29,22 @@ const RebatePage = ({ title, image, amount, amazon, brand, isLoading, error }) =
           <div>
             <AnimateFadeIn>
               <div className={css(styles.card)}>
+                {/*
                 <h3>{brand.title}</h3>
                 <h2 className={css(styles.title)}>{title}</h2>
+                */}
                 <p className={css(styles.content)}><img className={css(styles.image)} src={image} /></p>
                 {/*<p className={css(styles.content)}>shop: <a href={amazon}>{amazon}</a></p>-->*/}
               </div>
             </AnimateFadeIn>
             <AnimateFadeIn>
               <Card className={css(styles.card)}>
+                <CardHeader
+                  className={css(styles.cardHeader)}
+                  avatar={brand.logo}
+                  title={title}
+                  subtitle={brand.title}
+                />
                 <CardTitle 
                   title={"Claim $"+amount+" rebate"}
                   />
@@ -75,6 +83,9 @@ const styles = StyleSheet.create({
     margin: "0 auto 10px auto",
     padding: 10,
     maxWidth: 450
+  },
+  cardHeader: {
+    textAlign: 'left'
   },
   title: {
     fontSize: 28,

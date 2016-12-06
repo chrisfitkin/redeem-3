@@ -56,7 +56,7 @@ const ClaimForm = (props) => {
       </RadioButtonGroup>
     </div>
 
-      <div>
+      {/*<div>
         <br/>
         <Field
           type="file"
@@ -66,15 +66,15 @@ const ClaimForm = (props) => {
         <br/>
         <br/>
         <br/>
-      </div>
-      {/* <div>
+      </div>*/}
+      <div>
         <Field
           name={"files"}
           component={ReduxFormDropzone}
           multiple={false}
           dropzoneOnDrop={this.handleDrop}
         />
-      </div> */}
+      </div>
       <RaisedButton 
         label="Submit Claim" 
         fullWidth={true}

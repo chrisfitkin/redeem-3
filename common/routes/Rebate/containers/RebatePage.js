@@ -8,6 +8,7 @@ import NotFound from '../../../components/NotFound'
 import AnimateFadeIn from '../../../components/AnimateFadeIn'
 import { selectCurrentRebate } from '../reducer'
 import ClaimFormContainer from './ClaimFormContainer'
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 
 const redial = {
   fetch: ({ dispatch, params: { slug } }) => dispatch(loadRebate(slug))
@@ -15,7 +16,7 @@ const redial = {
 
 const mapStateToProps = state => selectCurrentRebate(state)
 
-const RebatePage = ({ title, image, amazon, brand, isLoading, error }) => {
+const RebatePage = ({ title, image, amount, amazon, brand, isLoading, error }) => {
   if (!error) {
     return (
       <div>
@@ -27,12 +28,22 @@ const RebatePage = ({ title, image, amazon, brand, isLoading, error }) => {
         {!isLoading &&
           <div>
             <AnimateFadeIn>
-              <ClaimFormContainer />
-              <hr />
-              <h3>{brand.title}</h3>
-              <h2 className={css(styles.title)}>{title}</h2>
-              <p className={css(styles.content)}>shop: <a href={amazon}>{amazon}</a></p>
-              <p className={css(styles.content)}><img className={css(styles.image)} src={image} /></p>
+              <div className={css(styles.card)}>
+                <h3>{brand.title}</h3>
+                <h2 className={css(styles.title)}>{title}</h2>
+                <p className={css(styles.content)}><img className={css(styles.image)} src={image} /></p>
+                {/*<p className={css(styles.content)}>shop: <a href={amazon}>{amazon}</a></p>-->*/}
+              </div>
+            </AnimateFadeIn>
+            <AnimateFadeIn>
+              <Card className={css(styles.card)}>
+                <CardTitle 
+                  title={"Claim $"+amount+" rebate"}
+                  />
+                <CardText>
+                  <ClaimFormContainer />
+                </CardText>
+              </Card>
             </AnimateFadeIn>
           </div>}
       </div>
@@ -47,6 +58,7 @@ RebatePage.propTypes = {
   title: PropTypes.string,
   image: PropTypes.string,
   amazon: PropTypes.string,
+  amount: PropTypes.number,
   brand: PropTypes.object,
   isLoading: PropTypes.bool,
   error: PropTypes.object
@@ -58,6 +70,11 @@ const styles = StyleSheet.create({
     lineHeight: '1.5',
     margin: '1rem 0',
     color: '#555'
+  },
+  card: {
+    margin: "0 auto 10px auto",
+    padding: 10,
+    maxWidth: 450
   },
   title: {
     fontSize: 28,

@@ -7,6 +7,7 @@ const initialState = {
   title: '',
   image: '',
   amazon: '',
+  amount: '',
   brand: {}
 }
 
@@ -22,6 +23,7 @@ export default function currentRebate (state = initialState, action) {
         image: action.payload.image,
         amazon: action.payload.amazon,
         brand: action.payload.brand,
+        amount: action.payload.amount,
         lastFetched: action.meta.lastFetched,
         isLoading: false}
     case types.LOAD_REBATE_FAILURE:

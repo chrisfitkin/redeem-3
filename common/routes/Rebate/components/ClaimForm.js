@@ -3,6 +3,7 @@ import { Field, reduxForm } from 'redux-form'
 import FileInput from './FileInput'
 import ReduxFormDropzone from '../../../components/ReduxFormDropzone'
 import RenderField from './RenderField'
+import RaisedButton from 'material-ui/RaisedButton';
 
 // https://medium.com/@rajaraodv/adding-a-robust-form-validation-to-react-redux-apps-616ca240c124#.v1jey3pdd
 
@@ -25,11 +26,13 @@ const ClaimForm = (props) => {
       <Field name="rebateCode" type="text" component={RenderField} label="Rebate Code" />
 
       <div>
+        <br/>
         <Field
           type="file"
           name="photo"
           component={FileInput}
         />
+        <br/>
       </div>
       {/* <div>
         <Field
@@ -39,7 +42,11 @@ const ClaimForm = (props) => {
           dropzoneOnDrop={this.handleDrop}
         />
       </div> */}
-      <button type="submit">Submit Claim</button>
+      <RaisedButton 
+        label="Submit Claim" 
+        fullWidth={true}
+        type="submit" 
+      />
     </form>
   )
 }

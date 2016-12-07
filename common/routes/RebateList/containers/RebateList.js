@@ -16,7 +16,7 @@ const mapStateToProps = state => ({
   rebates: selectRebates(state)
 })
 
-// TODO: What is going on here? Lets show the indicator on loadMore
+// TODO: Lets show the indicator on loadMore
 // then update the rebates in the dispatch function promise
 const mapDispatchToProps = dispatch => ({
   hasMore: true,
@@ -24,8 +24,8 @@ const mapDispatchToProps = dispatch => ({
     if(pageNumberToLoad < 25) {
       // TODO: Fix inifnite loop (probably in hasMore w/ isLoadingMore flag)
       // TODO: Actually load more using the page number instead of duplicating
-      console.log('pageNumberToLoad = '+pageNumberToLoad)
-      console.log('call dispatch(loadMoreRebates())')
+      // console.log('pageNumberToLoad = '+pageNumberToLoad)
+      // console.log('call dispatch(loadMoreRebates())')
       dispatch(loadMoreRebates())
     }
   }

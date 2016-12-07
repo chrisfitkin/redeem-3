@@ -72,8 +72,8 @@ for (var i=0;i<3;i++) {
 const uuidV4 = require('uuid/v4');
 rebates = rebates.map(function(obj){ 
    return {
-     uuid: uuidV4(),
-     ...obj
+     ...obj,
+     uuid: uuidV4()
    }
 });
 

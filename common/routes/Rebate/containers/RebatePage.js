@@ -8,7 +8,7 @@ import NotFound from '../../../components/NotFound'
 import AnimateFadeIn from '../../../components/AnimateFadeIn'
 import { selectCurrentRebate } from '../reducer'
 import ClaimFormContainer from './ClaimFormContainer'
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card'
 
 const redial = {
   fetch: ({ dispatch, params: { slug } }) => dispatch(loadRebate(slug))
@@ -34,7 +34,7 @@ const RebatePage = ({ title, image, amount, amazon, brand, isLoading, error }) =
                 <h2 className={css(styles.title)}>{title}</h2>
                 */}
                 <p className={css(styles.content)}><img className={css(styles.image)} src={image} /></p>
-                {/*<p className={css(styles.content)}>shop: <a href={amazon}>{amazon}</a></p>-->*/}
+                {/* <p className={css(styles.content)}>shop: <a href={amazon}>{amazon}</a></p>--> */}
               </div>
             </AnimateFadeIn>
             <AnimateFadeIn>
@@ -45,8 +45,8 @@ const RebatePage = ({ title, image, amount, amazon, brand, isLoading, error }) =
                   title={title}
                   subtitle={brand.title}
                 />
-                <CardTitle 
-                  title={"Claim $"+amount+" rebate"}
+                <CardTitle
+                  title={'Claim $' + amount + ' rebate'}
                   />
                 <CardText>
                   <ClaimFormContainer />
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     color: '#555'
   },
   card: {
-    margin: "0 auto 10px auto",
+    margin: '0 auto 10px auto',
     padding: 10,
     maxWidth: 450
   },

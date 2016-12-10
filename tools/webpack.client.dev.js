@@ -43,9 +43,9 @@ module.exports = {
         exclude: /(node_modules|server)/,
         query: {
           cacheDirectory: true,
-          presets: ["es2015", "react", "stage-0"]
+          presets: ['es2015', 'react', 'stage-0']
         }
-      },
+      }
     ]
   },
   standard: {
@@ -60,5 +60,5 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js', 2),
     new webpack.NoErrorsPlugin()
-  ],
+  ]
 }

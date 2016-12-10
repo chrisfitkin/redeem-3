@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card'
+import FlatButton from 'material-ui/FlatButton'
 import { StyleSheet, css } from 'aphrodite'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group' // ES6
 import AnimateFadeIn from '../../../components/AnimateFadeIn'
@@ -11,27 +11,26 @@ const RebateListItem = ({ rebate }) => (
   <div className={css(styles.listItem)}>
     <AnimateFadeUp key={rebate.uuid}>
       <Card>
-        <CardHeader 
-          title={rebate.title} 
+        <CardHeader
+          title={rebate.title}
           avatar={rebate.brand.logo}
           />
         <CardMedia>
-            <img src={rebate.image} className={css(styles.image)} />
+          <img src={rebate.image} className={css(styles.image)} />
         </CardMedia>
         <CardTitle subtitle={`\$${rebate.amount} rebate`} />
         <CardActions>
-          <FlatButton label="claim" containerElement={<Link to={`/rebate/${rebate.slug}`}/>}  primary={true} />
-          <FlatButton label="shop" containerElement={<Link to={rebate.amazon}/>} target="_blank" />
+          <FlatButton label='claim' containerElement={<Link to={`/rebate/${rebate.slug}`} />} primary />
+          <FlatButton label='shop' containerElement={<Link to={rebate.amazon} />} target='_blank' />
         </CardActions>
       </Card>
     </AnimateFadeUp>
   </div>
 )
 
-
 const styles = StyleSheet.create({
   listItem: {
-    //margin: '0 auto 1.5rem'
+    // margin: '0 auto 1.5rem'
     // width: '100%',
     width: 300,
     maxWidth: 300
@@ -51,8 +50,5 @@ const styles = StyleSheet.create({
     maxWidth: '100%'
   }
 })
-
-
-
 
 export default RebateListItem

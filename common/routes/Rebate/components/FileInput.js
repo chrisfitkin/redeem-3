@@ -1,21 +1,21 @@
 import React from 'react'
 
 class FileInput extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.onChange = this.onChange.bind(this)
   }
 
-  onChange(e) {
+  onChange (e) {
     const { input: { onChange } } = this.props
     onChange(e.target.files[0])
   }
 
-  render() {
+  render () {
     const { input: { value } } = this.props
 
     return (<input
-      type="file"
+      type='file'
       value={value}
       onChange={this.onChange}
     />)

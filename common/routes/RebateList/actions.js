@@ -10,7 +10,7 @@ export function loadRebates () {
         // console.log(res)
         dispatch({
           type: LOAD_REBATES_SUCCESS,
-          payload: res.data,
+          payload: res.data, // TODO: load initial set and fix server side render
           meta: {
             lastFetched: Date.now()
           }

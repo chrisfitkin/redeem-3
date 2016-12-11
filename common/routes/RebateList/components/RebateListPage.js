@@ -6,8 +6,8 @@ import { StyleSheet, css } from 'aphrodite'
 
 const styles = StyleSheet.create({
   root: {
-    width: 'auto',
-    maxWidth: '100%'
+    // width: 'auto',
+    // maxWidth: '100%'
   },
   title: {
     fontSize: 28,
@@ -15,8 +15,8 @@ const styles = StyleSheet.create({
     color: '#b7b7b7'
   },
   masonryInfiniteScroller: {
-    maxWidth: '100%',
-    margin: '0 auto 1.5rem'
+    // maxWidth: '100%',
+    // margin: '0 auto 1.5rem'
   }
 })
 
@@ -25,6 +25,8 @@ const sizes = [
   { mq: '768px', columns: 2, gutter: 20 },
   { mq: '1024px', columns: 3, gutter: 20 }
 ]
+
+
 
 const RebateListPage = ({ rebates, hasMore, loadMore }) => (
   <div className={css(styles.root)}>
@@ -35,15 +37,15 @@ const RebateListPage = ({ rebates, hasMore, loadMore }) => (
       </div>}
     {!rebates.isLoading &&
       <MasonryInfiniteScroller
-        sizes={sizes}
         loader={null}
         style={styles.masonryInfiniteScroller}
         className={css(styles.masonryInfiniteScroller)}
         hasMore={hasMore}
         loadMore={loadMore}
+        position={false}
         >
         {
-          rebates.data.map((rebate, i) => <RebateListItem key={rebate.uuid} rebate={rebate} />)
+          rebates.data.map((rebate, i) => <RebateListItem style={{width: 200}} key={rebate.uuid} rebate={rebate} />)
         }
       </MasonryInfiniteScroller>}
 

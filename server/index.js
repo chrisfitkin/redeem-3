@@ -31,6 +31,9 @@ import createRoutes from '../common/routes/root'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 injectTapEventPlugin()
 
+// Material-ui Server Render user agent
+global.navigator = { userAgent: 'all' };
+
 export const createServer = (config) => {
   const __PROD__ = config.nodeEnv === 'production'
   const __TEST__ = config.nodeEnv === 'test'

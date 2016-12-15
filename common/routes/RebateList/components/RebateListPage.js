@@ -15,9 +15,11 @@ const styles = StyleSheet.create({
     margin: '0 auto 1.5rem',
     color: '#b7b7b7'
   },
-  masonryInfiniteScroller: {
+  masonryContainer: {
     maxWidth: '100%',
-    margin: '0 auto 1.5rem',
+  },
+  masonryInfiniteScroller: {
+    margin: '0 auto'
   }
 })
 
@@ -36,19 +38,18 @@ const RebateListPage = ({ rebates, hasMore, loadMore }) => (
         <h2 className={css(styles.title)}>Loading....</h2>
       </div>}
     {!rebates.isLoading &&
-      <MasonryInfiniteScroller 
-        sizes={sizes}
-        loader={null}
-        style={styles.masonryInfiniteScroller}
-        className={css(styles.masonryInfiniteScroller)}
-        hasMore={hasMore}
-        loadMore={loadMore}
-        >
-        {
-          rebates.data.map((rebate, i) => <RebateListItem key={rebate.uuid} rebate={rebate} />)
-        }
-      </MasonryInfiniteScroller>}
-      
+      <div className={css(styles.masonryContainer)}>
+        <MasonryInfiniteScroller 
+          loader={null}
+          className={css(styles.masonryInfiniteScroller)}
+          hasMore={hasMore}
+          loadMore={loadMore}
+          >
+          {
+            rebates.data.map((rebate, i) => <RebateListItem key={rebate.uuid} rebate={rebate} />)
+          }
+        </MasonryInfiniteScroller>
+      </div>}
     {rebates.isLoadingMore &&
       <div>
         <h2 className={css(styles.title)}>Loading More...</h2>

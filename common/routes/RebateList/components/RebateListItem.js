@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     //margin: '0 auto 1.5rem'
     // width: '100%',
     width: 300,
-    maxWidth: 300
+    maxWidth: '100%'
   },
   title: {
     fontSize: 28,

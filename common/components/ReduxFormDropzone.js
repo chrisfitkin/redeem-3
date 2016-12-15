@@ -1,23 +1,23 @@
-import React from 'react';
-import Dropzone from 'react-dropzone';
+import React from 'react'
+import Dropzone from 'react-dropzone'
 
 const ReduxFormDropzone = (field) => {
-    let {
+  let {
         input,
         meta,
         dropzoneOnDrop,
         ...props
     } = field
 
-    return (
-        <Dropzone
-            onDrop={(acceptedFiles, rejectedFiles, e) => {
-                field.input.onChange(acceptedFiles);
-                field.dropzoneOnDrop && field.dropzoneOnDrop(acceptedFiles, rejectedFiles, e);
-            }}
-            {...props}
+  return (
+    <Dropzone
+      onDrop={(acceptedFiles, rejectedFiles, e) => {
+        field.input.onChange(acceptedFiles)
+        field.dropzoneOnDrop && field.dropzoneOnDrop(acceptedFiles, rejectedFiles, e)
+      }}
+      {...props}
         />
-    )
+  )
 }
 
-export default ReduxFormDropzone;
+export default ReduxFormDropzone

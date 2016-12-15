@@ -32,19 +32,19 @@ export function loadMoreRebates () {
   return (dispatch, getState, { axios }) => {
     const { protocol, host } = getState().sourceRequest
     const { isLoading, isLoadingMore } = getState().rebates
-    
-    if (isLoadingMore) { 
-      return new Promise(function(resolve, reject) {
+
+    if (isLoadingMore) {
+      return new Promise(function (resolve, reject) {
         resolve(true)
-      }) 
+      })
     }
 
     dispatch({ type: LOAD_MORE_REBATES_REQUEST })
     return axios.get(`${protocol}://${host}/api/v0/rebates`)
       .then(res => {
         // TODO: remove this step when pulling unique records
-        const uuidV4 = require('uuid/v4');
-        res.data = res.data.map(function(obj){ 
+        const uuidV4 = require('uuid/v4')
+        res.data = res.data.map(function (obj) {
           return {
             ...obj,
             uuid: uuidV4({msecs: Date.now()})

@@ -26,11 +26,10 @@ import { configureStore } from '../common/store'
 import reducer from '../common/createReducer'
 import createRoutes from '../common/routes/root'
 
-
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
-import injectTapEventPlugin from 'react-tap-event-plugin';
-injectTapEventPlugin();
+import injectTapEventPlugin from 'react-tap-event-plugin'
+injectTapEventPlugin()
 
 export const createServer = (config) => {
   const __PROD__ = config.nodeEnv === 'production'
@@ -65,7 +64,6 @@ export const createServer = (config) => {
   app.use(express.static('public'))
   app.use('/api/v0/posts', require('./api/posts'))
   app.use('/api/v0/rebates', require('./api/rebates'))
-
 
   app.get('*', (req, res) => {
     const store = configureStore({
@@ -166,8 +164,8 @@ export const createServer = (config) => {
                 <div id="root">${data.html}</div>
                 <script>window.renderedClassNames = ${JSON.stringify(data.css.renderedClassNames)};</script>
                 <script>window.INITIAL_STATE = ${JSON.stringify(initialState)};</script>
-                <script src="${ __PROD__ ? assets.vendor.js : '/vendor.js' }"></script>
-                <script async src="${ __PROD__ ? assets.main.js : '/main.js' }" ></script>
+                <script src="${__PROD__ ? assets.vendor.js : '/vendor.js'}"></script>
+                <script async src="${__PROD__ ? assets.main.js : '/main.js'}" ></script>
               </body>
             </html>
           `)
@@ -175,9 +173,7 @@ export const createServer = (config) => {
     })
   })
 
-
   const server = http.createServer(app)
-
 
   // Heroku dynos automatically timeout after 30s. Set our
   // own timeout here to force sockets to close before that.
@@ -201,9 +197,8 @@ export const createServer = (config) => {
   return server
 }
 
-
 export const startServer = (serverConfig) => {
-  const config =  {...DefaultServerConfig, ...serverConfig}
+  const config = {...DefaultServerConfig, ...serverConfig}
   const server = createServer(config)
   server.listen(config.port, (err) => {
     if (config.nodeEnv === 'production' || config.nodeEnv === 'test') {

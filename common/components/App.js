@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import Nav from './Nav'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import { StyleSheet, css } from 'aphrodite'
 
 const App = ({ children }) => (
@@ -12,7 +12,7 @@ const App = ({ children }) => (
       <Nav />
       {children}
       <footer className={css(styles.footer)}>
-        {/*Copyright © 2016 <a className={css(styles.footerLink)} href='http://twitter.com/chrisfitkin' target='_blank'>Chris Fitkin</a>*/}
+        {/* Copyright © 2016 <a className={css(styles.footerLink)} href='http://twitter.com/chrisfitkin' target='_blank'>Chris Fitkin</a> */}
         Copyright © 2016 Redeem App
       </footer>
     </div>

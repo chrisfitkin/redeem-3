@@ -5,7 +5,7 @@ import { loadRebates, loadMoreRebates } from '../actions'
 import { selectRebates } from '../reducer'
 import RebateListPage from '../components/RebateListPage'
 
-// TODO: create hasMore and loadMore function, pass to props through dispatch 
+// TODO: create hasMore and loadMore function, pass to props through dispatch
 // https://github.com/skoob13/react-masonry-infinite
 
 const redial = {
@@ -21,7 +21,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   hasMore: true,
   loadMore: (pageNumberToLoad) => {
-    if(pageNumberToLoad < 25) {
+    if (pageNumberToLoad < 25) {
       // TODO: Fix inifnite loop (probably in hasMore w/ isLoadingMore flag)
       // TODO: Actually load more using the page number instead of duplicating
       // console.log('pageNumberToLoad = '+pageNumberToLoad)
@@ -35,4 +35,4 @@ RebateListPage.PropTypes = {
   rebates: PropTypes.array.isRequired
 }
 
-export default provideHooks(redial)(connect(mapStateToProps,mapDispatchToProps)(RebateListPage))
+export default provideHooks(redial)(connect(mapStateToProps, mapDispatchToProps)(RebateListPage))

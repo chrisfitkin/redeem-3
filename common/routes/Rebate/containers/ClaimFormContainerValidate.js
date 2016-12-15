@@ -22,8 +22,8 @@ export const validate = values => {
   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
     errors.email = 'Invalid email address'
   }
-  
-  console.log("====== errors =====")
+
+  console.log('====== errors =====')
   console.log(errors)
   return errors
 }
@@ -31,12 +31,10 @@ export const validate = values => {
 export const asyncValidate = (values/*, dispatch */) => {
   return sleep(1000) // simulate server latency
     .then(() => {
-
       // firstName
       if (values.firstName == 'chris') {
         throw { firstName: 'Can\'t be chris :( '}
       }
-
     })
 }
 

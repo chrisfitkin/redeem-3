@@ -7,7 +7,7 @@ import AnimateFadeUp from '../../../components/AnimateFadeUp'
 // and maintain DRY
 const Home = (props) => (
   <div>
-    <h2 className={css(styles.header)}>Your Rebates, Your Way</h2>
+    <h2 className={css(styles.header)}>Your Money, Your Way</h2>
     <p className={css(styles.lead)}>
         Shop for products with the brands you already love.  Get paid <em>instantly</em> with MasterCard, PayPal, and Venmo.
       </p>

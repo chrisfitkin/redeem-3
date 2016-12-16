@@ -9,7 +9,7 @@ import AnimateFadeUp from '../../../components/AnimateFadeUp'
 
 const RebateListItem = ({ rebate }) => (
   <div className={css(styles.listItem)}>
-    <AnimateFadeUp key={rebate.uuid}>
+    {/*<AnimateFadeUp key={rebate.uuid}>*/}
       <Card>
         <CardHeader
           title={rebate.title}
@@ -24,7 +24,7 @@ const RebateListItem = ({ rebate }) => (
           <FlatButton label='shop' containerElement={<Link to={rebate.amazon} />} target='_blank' />
         </CardActions>
       </Card>
-    </AnimateFadeUp>
+    {/*</AnimateFadeUp>*/}
   </div>
 )
 

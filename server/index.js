@@ -110,9 +110,13 @@ export const createServer = (config) => {
           // just call html = ReactDOM.renderToString(InitialView)
           // to if you don't want Aphrodite. Also change renderFullPage
           // accordingly
-          const data = StyleSheetServer.renderStatic(
-            () => ReactDOM.renderToString(InitialView)
-          )
+          
+          // const data = StyleSheetServer.renderStatic(
+          //   () => ReactDOM.renderToString(InitialView)
+          // )
+
+          const html = ReactDOM.renderToString(InitialView)
+
           const head = Helm.rewind()
           res.status(200).send(`
             <!DOCTYPE html>
@@ -157,12 +161,12 @@ export const createServer = (config) => {
                     padding: 0;
                   }
                 </style>
-                <style data-aphrodite>${data.css.content}</style>
+                <style data-aphrodite></style>
                 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
               </head>
               <body>
-                <div id="root">${data.html}</div>
-                <script>window.renderedClassNames = ${JSON.stringify(data.css.renderedClassNames)};</script>
+                <div id="root">${html}</div>
+                <script></script>
                 <script>window.INITIAL_STATE = ${JSON.stringify(initialState)};</script>
                 <script src="${__PROD__ ? assets.vendor.js : '/vendor.js'}"></script>
                 <script async src="${__PROD__ ? assets.main.js : '/main.js'}" ></script>

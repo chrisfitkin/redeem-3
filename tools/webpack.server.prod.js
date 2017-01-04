@@ -40,7 +40,6 @@ module.exports = {
         },
         exclude: /(node_modules)/
       }
-
     ]
   },
   plugins: [

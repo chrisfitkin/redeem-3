@@ -9,8 +9,8 @@ const Home = (props) => (
   <div>
     <h2 className={css(styles.header)}>Your Money, Your Way</h2>
     <p className={css(styles.lead)}>
-        Shop for products with the brands you already love.  Get paid <em>instantly</em> with MasterCard, PayPal, and Venmo.
-      </p>
+      Your Money. Your Way.
+    </p>
     <AnimateFadeUp>
       <Link to='/rebates' className={css(styles.link)} activeClassName={css(styles.link, styles.activeLink)}> Explore Rebates
         </Link>
@@ -25,10 +25,11 @@ const styles = StyleSheet.create({
     margin: '0 0 1.5rem'
   },
   lead: {
-    fontSize: 18,
+    fontSize: 14,
     lineHeight: '1.5',
     margin: '0 0 1.5rem',
-    color: '#555'
+    color: '#fff',
+    fontStyle: 'italic'
   },
   body: {
     fontSize: '1rem',

@@ -146,6 +146,7 @@ export const createServer = (config) => {
                   body {
                     font-size: 1rem;
                     background-color: #fff;
+                    background: url(/images/background.jpg);
                     color: #555;
                     -webkit-font-smoothing: antialiased;
                     -moz-osx-font-smoothing: grayscale;

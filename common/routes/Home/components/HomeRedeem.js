@@ -2,19 +2,38 @@ import React from 'react'
 import Link from 'react-router/lib/Link'
 import { StyleSheet, css } from 'aphrodite'
 import AnimateFadeUp from '../../../components/AnimateFadeUp'
+import { Button, Color, InputField } from '../../../style.js'
+import TextField from 'material-ui/TextField'
+
 
 // This is a static page. It uses an array to hold data about the resources
 // and maintain DRY
 const Home = (props) => (
   <div>
-    <h2 className={css(styles.header)}>Your Money, Your Way</h2>
     <p className={css(styles.lead)}>
       Your Money. Your Way.
     </p>
+    <div className={css(styles.spacer)} />
     <AnimateFadeUp>
-      <Link to='/rebates' className={css(styles.link)} activeClassName={css(styles.link, styles.activeLink)}> Explore Rebates
-        </Link>
+      <Link to='/rebates' className={css(styles.buttonRebates)} activeClassName={css(styles.buttonRebates, styles.activeLink)}> 
+        Explore rebates
+      </Link>
     </AnimateFadeUp>
+    <hr className={css(styles.hr)} />    
+    <TextField hintText={'enter code'}
+      floatingLabelText={'enter code'}
+      className={css(styles.codeField)}
+      style={{
+        borderRadius: 2,
+        padding: '0',
+        marginBottom: 20,
+        background: '#fff',
+      }}
+      {...props}
+    /><br/>
+    <Link to='/rebates' className={css(styles.buttonRedeem)}> 
+      Redeem Code
+    </Link>
   </div>
 )
 
@@ -25,11 +44,13 @@ const styles = StyleSheet.create({
     margin: '0 0 1.5rem'
   },
   lead: {
-    fontSize: 14,
+    paddingTop: 30,
+    fontSize: 22,
     lineHeight: '1.5',
     margin: '0 0 1.5rem',
     color: '#fff',
-    fontStyle: 'italic'
+    fontStyle: 'italic',
+    fontWeight: 100
   },
   body: {
     fontSize: '1rem',
@@ -42,20 +63,27 @@ const styles = StyleSheet.create({
     listStyle: 'none',
     padding: 0
   },
-  link: {
-    display: 'block',
-    fontSize: '1.25rem',
-    margin: '0 0 .5rem',
-    lineHeight: '1.5',
-    fontWeight: 'bold',
-    color: '#08c',
-    opacity: 1,
-    transition: '.2s opacity ease',
-    textDecoration: 'none',
-    ':hover': {
-      opacity: 0.5,
-      textDecoration: 'none'
-    }
+  buttonRebates: {
+    ...Button,
+    color: Color.green,
+    borderColor: Color.green,
+  },
+  buttonRedeem: {
+    ...Button,
+    color: Color.white,
+    borderColor: Color.white,
+  },
+  spacer: {
+    height: 60
+  },
+  hr: {
+    color: '#fff',
+    borderSize: '1px',
+    maxWidth: 250,
+    margin: '40px auto'
+  },
+  codeField: {
+    ...InputField
   }
 })
 

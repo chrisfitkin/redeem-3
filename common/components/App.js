@@ -9,7 +9,7 @@ import { StyleSheet, css } from 'aphrodite'
 let Logo = "/images/logo.png";
 
 const App = ({ children, location }) => {
-  console.log('location: ', location)
+  // console.log('location: ', location)
   return (
     <MuiThemeProvider>
       <div className={css(styles.root)}>

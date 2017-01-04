@@ -150,7 +150,7 @@ export const createServer = (config) => {
                     color: #555;
                     -webkit-font-smoothing: antialiased;
                     -moz-osx-font-smoothing: grayscale;
-                    font-family: -apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+                    font-family: Futura, "Trebuchet MS", Arial, "Helvetica Neue", sans-serif;
                   }
 
                   h1,h2,h3,h4,h5,h6 {

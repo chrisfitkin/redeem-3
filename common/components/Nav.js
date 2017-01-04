@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     }
   },
   activeLink: {
-    color: '#000'
+    color: '#fff'
   }
 })
 

@@ -50,6 +50,7 @@ export function loadMoreRebates () {
             uuid: uuidV4({msecs: Date.now()})
           }
         })
+        console.log('res', res);
         return res
       })
       .then(res => {

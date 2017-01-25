@@ -27,16 +27,15 @@ const RebatePage = ({ title, image, amount, amazon, brand, isLoading, error }) =
           </div>}
         {!isLoading &&
           <div>
-            <AnimateFadeIn>
+            {/*<AnimateFadeIn>
               <div className={css(styles.card)}>
-                {/*
                 <h3>{brand.title}</h3>
                 <h2 className={css(styles.title)}>{title}</h2>
-                */}
+
                 <p className={css(styles.content)}><img className={css(styles.image)} src={image} /></p>
-                {/* <p className={css(styles.content)}>shop: <a href={amazon}>{amazon}</a></p>--> */}
+                <p className={css(styles.content)}>shop: <a href={amazon}>{amazon}</a></p>-->
               </div>
-            </AnimateFadeIn>
+            </AnimateFadeIn>*/}
             <AnimateFadeIn>
               <Card className={css(styles.card)}>
                 <CardHeader

@@ -18,35 +18,33 @@ const ClaimForm = (props) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Field name='firstName' type='text' component={RenderField} label='First Name' />
-      <Field name='lastName' type='text' component={RenderField} label='Last Name' />
-      <Field name='email' type='text' component={RenderField} label='Email' />
+      {/*
+        <Field name='firstName' type='text' component={RenderField} label='First Name' />
+        <Field name='lastName' type='text' component={RenderField} label='Last Name' />
+        */}
       <Field name='rebateCode' type='text' component={RenderField} label='Rebate Code' />
 
       <div>
         <br />
         <h3>How do you want to get paid?</h3>
         <br />
-        <RadioButtonGroup name='paymentMethod' defaultSelected='mastercard'>
-          <RadioButton
-            value='mastercard'
-            label='MasterCard Send'
-            style={styles.radioButton}
-      />
-          <RadioButton
-            value='venmo'
-            label='Venmo'
-            style={styles.radioButton}
-      />
+        <RadioButtonGroup name='paymentMethod' defaultSelected='paypal'>
           <RadioButton
             value='paypal'
             label='PayPal'
             style={styles.radioButton}
       />
           <RadioButton
+            value='mastercard'
+            label='MasterCard Send'
+            style={styles.radioButton}
+            disabled={'disabled'}
+      />
+          <RadioButton
             value='square'
             label='SquareCash'
             style={styles.radioButton}
+            disabled={'disabled'}
       />
         </RadioButtonGroup>
       </div>
@@ -70,6 +68,8 @@ const ClaimForm = (props) => {
           dropzoneOnDrop={this.handleDrop}
         />
       </div> */}
+      <Field name='email' type='text' component={RenderField} label='PayPal Email' />
+      
       <RaisedButton
         label='Submit Claim'
         fullWidth
